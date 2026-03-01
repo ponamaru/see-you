@@ -27,7 +27,7 @@ iframe.contentWindow.fun = Pvar;
 });
 
 iframe.onload = function() {
-  const data = { action: 'changeFun', funS: Pver };
+  const data = { action: 'changeFun', funS: Pvar };
   iframe.contentWindow.postMessage(data'*');
 };
 
@@ -35,4 +35,5 @@ iframe.onload = function() {
 </script>
 </body>
 </html>
+
 
