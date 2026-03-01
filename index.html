@@ -17,7 +17,7 @@ top: 0%;
 <script>
 var Pvar = "funLoad2.js"; 
 let iframe = document.getElementById("tu1");
-
+iframe.contentWindow.fun = Pvar;
 window.addEventListener('message', (event) => {
 
 if(event.data === 'funC'){
@@ -35,3 +35,4 @@ iframe.onload = function() {
 </script>
 </body>
 </html>
+
