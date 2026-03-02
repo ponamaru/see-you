@@ -137,12 +137,6 @@ pointer-events: none;
 var fun = "funLoad.js";
 
 fun = window.parent.Pvar;
-
-window.addEventListener('message'(event) => {
-  if (event.data.action === 'changeFun') {
-fun = event.data.funS;
-  }
-});
 document.getElementById("fL").src = fun;
 
 </script>
@@ -700,3 +694,4 @@ document.addEventListener("click", TMAren);
 </script>
 
 </html>
+
