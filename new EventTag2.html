@@ -9,6 +9,10 @@ html, body {
 user-select: none;         
 
 }
+p {
+  line-height: 1.2;
+margin: 0.5em;
+}
 #vi3 {  
 position: absolute;
   top: 0;
@@ -134,9 +138,19 @@ pointer-events: none;
 <div id="blackBlock"></div>
 <script src="funLoad.js" id="fL"></script>
 <script>
-var fun = "funLoad.js";
+var fun = "funLoad2.js";
 
-fun = window.parent.Pvar;
+window.parent.postMessage("funC", '*');
+
+//fun = window.parent.Pvar;
+
+window.addEventListener('message',(event) => {
+  if (event.data.action === 'changeFun') {
+fun = event.data.funS;
+  }
+});
+
+
 document.getElementById("fL").src = fun;
 
 </script>
@@ -171,7 +185,6 @@ if(EwhChi === "140%"){
 vi.style.width = "140%";
     vi.style.left = -1*leftPos2 + "px";
 }
-vi3.style.top = "25%";
 }
 Ewh();
 let eventB = "";
@@ -304,10 +317,10 @@ talkF();
 
 function talkF (){
 if((serifNN < serifNS[serifN].length)&&(moad === "talk")) {
-document.getElementById("area").innerText = serifNS[serifN][serifNN];
+document.getElementById("area").innerHTML = serifNS[serifN][serifNN];
 
 seMf();
-
+TMAren();
 if(moad === "talk"){
 serifNN += 1;
 moad = "walkLook";
@@ -315,7 +328,6 @@ moad = "walkLook";
 moad = "talk"
   }, 250);
 }
-
 
 }
 
@@ -366,7 +378,8 @@ if(spF2[i][10] === backN && spF2[i][11] === backNN){
 i2 += 1;
 const newe4 = document.createElement('img');
 newe4.id = "N" + i2;
-newe4.style.position = 'relative';
+newe4.style.display = "none";
+newe4.style.position = 'absolute';
 newe4.style.zIndex = spF2[i][12];
 widthPercent = spF2[i][7] * 0.1;
 newe4.style.width = parseFloat(spF2[i][0]) + widthPercent + "%";
@@ -453,8 +466,9 @@ o3.style.zIndex = spF2[s][12];
 let widthPercent = 0;
 widthPercent = spF2[s][7] * 0.1;
 o3.style.width = parseFloat(spF2[s][0]) + widthPercent + "%";
-o3.style.top = spF2[s][1];
-o3.style.left = spF2[s][2];
+o3.style.top = parseFloat(spF2[s][1])*winW/100 +"px";
+o3.style.left = parseFloat(spF2[s][2])*winW/100 +"px";
+
 o3.style.display = spF2[s][4];
 o3.src = spF2[s][3];
 found = true;
@@ -604,6 +618,7 @@ newe2.id = "NAsl" + i;
 uE[7][uE[7].length] = "NAsl" + i;
 newe2.classList.add('text2');
 newe2.innerText = uE[3][i];
+newe1.style.width = 200 + "%";
 newe2.style.top += i*50;
 newe1.style.top = "50%";
 newe1.style.left = "50%";
@@ -621,6 +636,7 @@ serifN = talkingE;
 
 vi4.addEventListener("click", () => {
 let ot = event.target.id;
+TMAren();
 decide = selectS[selectN][7].indexOf(ot);
 let a = selectS[selectN];
 if(a[7].includes(ot)){
@@ -647,25 +663,37 @@ let id = window.setInterval(function(){
 let idA;
 
 function TMAren(){
-
 for (let u = 0; u < tMa.length; u++) {
 idA = tMa[u];
 if(idA[0] === "serifNandNN"){
+
 if(moad==="talk"&&idA[2] === serifN&&idA[3]=== serifNN){
 eveTu();
+
 }
 }
 
 }
 }
+
+
+
+for (let u = 0; u < tMa.length; u++) {
+idA = tMa[u];
+if(idA[0] === "onload"){
+eveTu();
+}
+
+}
+
+
 
 function eveTu(){
 let idB;
 const winW = window.innerWidth;
 const winH = window.innerHeight;
-for (let i = 0; i < eventTag.length; i++) {
-idB = eventTag[i];
-if(idA[1] === i){
+idB = eventTag[idA[1]];
+
 if(idB[0] === "creEle"){
 const newe4 = document.createElement(idB[1]);
 newe4.id = idB[2][1];
@@ -673,10 +701,19 @@ newe4.style.position = 'absolute';
 newe4.style.width = idB[2][2]*winW/100 + "px";
 newe4.style.left = idB[2][3]*winW/100 + "px";
 newe4.style.top = idB[2][4]*winW/100 + "px";
-if(idB[1] === "img"){
+if(idB[1] === "img"||idB[1] === "audio"){
 newe4.src = idB[2][0];
 }
 document.getElementById("vi5").appendChild(newe4);
+if(idB[1]==="audio"){
+newe4.play();
+newe4.addEventListener('loadedmetadata',function(e) {
+setTimeout(() => {
+  newe4.remove();
+}, newe4.duration*1000);
+});
+
+}
 }
 
 if(idB[0] === "removeEle"){
@@ -684,14 +721,18 @@ if(idB[1] === "nameH"){
 document.getElementById(idB[2][0]).remove();
 }
 }
+if(idB[0] === "CspF"){
+spF2[idB[2][0]][idB[2][1]] = idB[2][2];
 }
-}
+vi2B();
+
 }
 
 document.addEventListener("click", TMAren);
 
+document.body.ondragstart = function(e) {
+return false;
+};
 
 </script>
-
 </html>
-

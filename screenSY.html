@@ -1,0 +1,37 @@
+<html>
+<style>
+html, body {
+  background-color: gray;
+  overflow: hidden;
+}
+#tu1 {
+position: absolute;
+width: 101%;
+height: 100%;
+left: -0.5%;
+top: 0%;
+}
+</style>
+<body>
+<iframe src='new EventTag2.html' id="tu1"></iframe>
+<script>
+var Pvar = "funLoad2.js"; 
+let iframe = document.getElementById("tu1");
+
+window.addEventListener('message', (event) => {
+
+if(event.data === 'funC'){
+iframe.contentWindow.fun = Pvar;
+}
+
+});
+
+iframe.onload = function() {
+  const data = { action: 'changeFun', funS: Pvar };
+  iframe.contentWindow.postMessage(data,'*');
+};
+
+
+</script>
+</body>
+</html>
