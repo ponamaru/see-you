@@ -136,23 +136,24 @@ pointer-events: none;
 <div id="vi4"></div>
 <div id="vi5"></div>
 <div id="blackBlock"></div>
-<script src="funLoad.js" id="fL"></script>
 <script>
 var fun = "funLoad2.js";
 
 window.parent.postMessage("funC", '*');
 
 //fun = window.parent.Pvar;
-
+var funSS = ["funLoad2.js"];
 window.addEventListener('message',(event) => {
-  if (event.data.action === 'changeFun') {
-fun = event.data.funS;
+  if (funSS.includes(event.data2)) {
+fun = event.data2;
   }
 });
-
-
-document.getElementById("fL").src = fun;
-
+function Loaded(){
+const LoadedJs = document.createElement('script');
+LoadedJs.src = fun;
+document.html.appendChild(LoadedJs);
+}
+Loaded();
 </script>
 <script>
 const vi = document.getElementById("vi");
@@ -735,4 +736,5 @@ return false;
 };
 
 </script>
+
 </html>
