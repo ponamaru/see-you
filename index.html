@@ -27,11 +27,16 @@ iframe.contentWindow.fun = Pvar;
 });
 
 iframe.onload = function() {
-  const data = { action: 'changeFun', funS: Pvar };
-  iframe.contentWindow.postMessage(data,'*');
+const data = { action: 'changeFun', funS: Pvar };
+iframe.contentWindow.postMessage(data,'*');
 };
 
+function Load(){
+const data2 = 'funLoad2.js';
+iframe.contentWindow.postMessage(data2,'*');
+}
 
 </script>
 </body>
+
 </html>
