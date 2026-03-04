@@ -149,13 +149,17 @@ fun = event.data2;
   }
 });
 function Loaded(){
+const NewES = document.createElement('script');
+NewES.text = "newE.js";
 const LoadedJs = document.createElement('script');
 LoadedJs.text = fun;
 document.html.appendChild(LoadedJs);
+document.html.appendChild(NewES);
 }
 Loaded();
 </script>
 
 </html>
+
 
 
