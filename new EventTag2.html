@@ -150,7 +150,7 @@ fun = event.data2;
 });
 function Loaded(){
 const LoadedJs = document.createElement('script');
-LoadedJs.src = fun;
+LoadedJs.text = fun;
 document.html.appendChild(LoadedJs);
 }
 Loaded();
@@ -738,3 +738,4 @@ return false;
 </script>
 
 </html>
+
