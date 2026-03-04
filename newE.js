@@ -1,0 +1,578 @@
+const vi = document.getElementById("vi");
+const vi2 = document.getElementById("vi2");
+const vi3 = document.getElementById("vi3");
+const vi4 = document.getElementById("vi4");
+const btext = document.getElementById("btext");
+
+function changeFun() {
+window.parent.Pvar = "funLoad.js";
+window.parent.postMessage('funC', 'SeeyouFL');
+}
+
+
+vi.src = backSS[backN][backNN];
+
+const winW2 = window.innerWidth;
+var leftPos2 = (2/winW2*10);
+function Ewh(){
+const winW = window.innerWidth;
+const winH = window.innerHeight;
+const imgW = vi.offsetWidth;
+const imgH = vi.offsetHeight;
+const leftPos = (2/winW*10);
+const topPos = (winH / 2 - imgH / 2);
+if(EwhChi === "100%"){
+vi.style.width = "100%";
+}
+if(EwhChi === "140%"){
+vi.style.width = "140%";
+    vi.style.left = -1*leftPos2 + "px";
+}
+}
+Ewh();
+let eventB = "";
+var con = true;
+
+function viCa (){
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+    const imgW = vi.offsetWidth;
+    const imgH = vi.offsetHeight;
+    const leftPos = (20/winW*100 );
+    const topPos = (20/winH*100);
+
+}
+
+
+var serifS = [["Hello.","Wellcome to the school."],["a"]];
+var serifSS = [serifS,[["see you"],["b"]],[["see you"],["b"]],[["see you"],["b"]],[["see you"],["b"]],[["see you"],["b"]]]
+
+var talk = false;
+var select = false;
+
+var moad = "walkLook";
+
+var obs2 = [];
+var imgE = document.getElementsByTagName('img');
+
+function LRc3(){
+const winW = window.innerWidth;
+const winH = window.innerHeight;
+const imgW = vi.offsetWidth;
+const imgH = vi.offsetHeight;
+const leftPos = (2/winW*10);
+const topPos = (2/winH*10);
+let ms = 50; let n = 5;
+let t = 0;
+let k = 1;
+let e = at1*leftPos;
+let a;
+let id = window.setInterval(function(){
+t += 1;
+ a = 1 + (t*k/10)
+let wf = (a*a*a*ms)/(n*n*n);
+vi.style.left = e + wf*at1;
+vi3.style.left = e + wf*at1;
+
+
+if(wf>=ms){
+window.clearInterval(id);
+t = 0;
+e -= at1*wf;
+let id2 = window.setInterval(function(){
+
+t += 1;
+ a = 1 + (t*k/10)
+let wf2 = Math.sqrt(a)*ms/Math.sqrt(n);
+vi.style.left = e + wf2*at1;
+vi3.style.left = e + wf2*at1;
+
+if(wf2>=ms){
+
+window.clearInterval(id2);
+}
+}, n);
+}
+}, n);
+}
+
+let at1;
+
+document.getElementById("vi2").addEventListener("click", () => {
+if(con === true) {
+con = false;
+if(event.target === document.getElementById("bo1")){
+eventB = "bo1";
+right();
+at1 = 1;
+LRc3();
+}
+if(event.target === document.getElementById("bo3")){
+eventB = "bo3";
+left();
+at1 = -1;
+LRc3();
+}
+
+setTimeout(() => {
+vi.src = backSS[backN][backNN];
+newSPF();
+newSPF2();
+
+}, "250");
+
+setTimeout(() => {
+con = true;
+}, "500");
+  red();
+}
+});
+var talkingE = null;
+document.getElementById("vi3").addEventListener("click", () => {
+let obn = obs2.indexOf(event.target.id);
+
+for (let i = 0; i < spF2.length; i++) {
+talkingE = spF2[i];
+if(spF2[i][13] === obs2[obn]){
+if(spF2[i][8] === "talk"){
+
+if(con === true) {
+
+serifNN = 0;
+moad = "talk";
+con = false;
+if(backN === spF2[i][10] && backNN === spF2[i][11]){
+
+serifN = spF2[i][6];
+talkingE = spF2[i][6];
+
+}
+talkF();
+}
+
+}else{
+
+}
+
+}
+}
+});
+
+function talkF (){
+if((serifNN < serifNS[serifN].length)&&(moad === "talk")) {
+document.getElementById("area").innerHTML = serifNS[serifN][serifNN];
+
+seMf();
+TMAren();
+if(moad === "talk"){
+serifNN += 1;
+moad = "walkLook";
+  setTimeout(() => {
+moad = "talk"
+  }, 250);
+}
+
+}
+
+if((serifNN >= serifNS[serifN].length )&&(moad === "talk")){
+document.getElementById("area").innerText = null;
+con = true;
+serifNN = 0;
+moad = "walkLook";
+}
+}
+var backA = true;
+addEventListener("click", talkF);
+
+function red() {
+
+  document.getElementById(eventB).src = arrow[1];
+backA = false;
+  setTimeout(() => {
+    document.getElementById(eventB).src = arrow[0];
+backA = true;
+  }, 250);
+}
+
+function left (){
+backNN -= 1;
+if(backNN < 0)backNN = backSS[backN].length -1;
+if(backNN > backSS[backN].length -1)backNN = 0;
+
+}
+function right (){
+backNN += 1;
+if(backNN < 1)backNN = backSS[backN].length -1;
+if(backNN > backSS[backN].length -1)backNN = 0;
+
+}
+
+function newSPF () {
+while (obs2.length > 0) {
+document.getElementById(obs2[0]).remove();
+obs2.splice(0, 1);
+}
+
+let i2 = 0;
+for (let i = 0; i < spF2.length; i++) {
+spF2[i][13] = null;
+if(spF2[i][10] === backN && spF2[i][11] === backNN){
+
+i2 += 1;
+const newe4 = document.createElement('img');
+newe4.id = "N" + i2;
+newe4.style.display = "none";
+newe4.style.position = 'absolute';
+newe4.style.zIndex = spF2[i][12];
+widthPercent = spF2[i][7] * 0.1;
+newe4.style.width = parseFloat(spF2[i][0]) + widthPercent + "%";
+newe4.style.top = spF2[i][1];
+newe4.style.left = spF2[i][2];
+obs2[obs2.length] = newe4.id;
+spF2[i][13] = newe4.id;
+newe4.src = spF2[i][3];
+newe4.style.transform = "translate(-50%, -50%)";
+
+document.getElementById("vi3").appendChild(newe4);
+
+
+
+}
+}
+}
+newSPF();
+var BOob = [];
+
+
+function newSPF2 () {
+while (BOob.length > 0) {
+document.getElementById(BOob[0]).remove();
+BOob.splice(0, 1);
+}
+let i2 = 0;
+for (let i = 0; i < bo4xy.length; i++) {
+if(bo4xy[i][6] === backN && bo4xy[i][7] === backNN){
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+i2 += 1;
+const newe5 = document.createElement('img');
+newe5.id = "NA" + i2;
+newe5.style.position = "absolute";
+newe5.style.zIndex = 103;
+BOob[BOob.length] = newe5.id;
+bo4xy[i][8] = newe5.id;
+newe5.src = arrow[0];
+newe5.style.width = "7%";
+newe5.style.top = bo4xy[i][0];
+newe5.style.left = bo4xy[i][1];
+newe5.style.display = "block";
+newe5.classList.add("bo4Float");
+newe5.addEventListener("click", () => {
+backC();
+});
+document.body.appendChild(newe5);
+
+}
+}
+}
+
+newSPF2();
+
+function backC() {
+if(con === true){
+for (let i = 0; i < bo4xy.length; i++) {
+if(bo4xy[i][6] === backN && bo4xy[i][7] === backNN){
+if(bo4xy[i][3] !== null)backN = bo4xy[i][3];
+}
+}
+vi.src = backSS[backN][backNN];
+newSPF();
+newSPF2();
+}
+}
+
+function vi2B(){
+
+for (let s = 0; s < spF2.length; s++) {
+let found = false;
+for (let i = 0; i < obs2.length; i++) {
+
+
+if(backA === true){
+if(backN === spF2[s][10] && backNN === spF2[s][11]){
+vi2.style.display = "block";
+if(obs2[i] === spF2[s][13]){
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+const o3 = document.getElementById(obs2[i]);
+o3.style.zIndex = spF2[s][12];
+let widthPercent = 0;
+widthPercent = spF2[s][7] * 0.1;
+o3.style.width = parseFloat(spF2[s][0]) + widthPercent + "%";
+o3.style.top = parseFloat(spF2[s][1])*winW/100 +"px";
+o3.style.left = parseFloat(spF2[s][2])*winW/100 +"px";
+
+o3.style.display = spF2[s][4];
+o3.src = spF2[s][3];
+found = true;
+ break;  
+}
+}
+if(!found){
+if(backA === true){
+
+}
+
+}
+}
+}
+
+}
+}
+
+function catch2(){
+
+let A;
+//chatGPT
+const currentScene = backSS[backN][backNN];
+  let allObjs = [];
+  for (let i = 0; i < spFs.length; i++) {
+    for (let s = 0; s < spFs[i].length; s++) {
+      const obj = spFs[i][s];
+
+        allObjs.push(obj);
+
+    }
+  }
+//ここまで
+    const winW = window.innerWidth;
+    const winH = window.innerHeight;
+  for (let i = 0; i < allObjs.length; i++) {
+    A = allObjs[i];
+if(A[8] === "catch"&&A[4] ==="block"){
+
+    for (let j = 0; j < allObjs.length; j++) {
+if(A[7] < 1000){
+//chatGPT
+      if (i === j) continue;
+      const B = allObjs[j];
+//ここまで
+      const width50 = winW/2;
+      const height50 = winW/2;
+      const widthA = parseFloat(A[0]);
+      const widthB = parseFloat(B[0]);
+      const leftA = parseFloat(A[2]);
+      const leftB = parseFloat(B[2]);
+      const rightA = parseFloat(A[0])/2;
+      const rightB = parseFloat(B[0])/2;
+      const leftA2 = parseFloat(A[2])*100/winW;
+      const leftB2 = parseFloat(B[2])*100/winW;
+      const widthA2 = parseFloat(A[0])*100/winW;
+      const widthB2 = parseFloat(B[0])*100/winW;
+
+
+
+let ZinH = [B[7]];
+document.getElementById("btext").innerText = leftA+","+widthA+","+leftB+","+widthB;
+if((leftA2 + widthA2 + A[7]>= leftB2) && (leftA2  <= leftB2 + B[7] + widthB2)
+&&(A[7] < B[7]&&A[7] >= B[7]-A[9]*2 )&&(backSS[A[10]][A[11]] ===backSS[B[10]][B[11]])&&(B[4] ==="block")){
+ZinH[0] = B[7];
+A[12] = ZinH[0] + 1;
+
+let left2 = leftA - A[9]*0.1;
+let left = leftA + A[9]*0.1;
+
+if(leftA < leftB) {
+A[2] = left2 + "%";
+}else{
+ A[2] = left + "%";
+}
+         
+}else{
+
+A[7] += A[9] * 0.1; 
+
+
+if(A[7] < Zin[0])A[12] = ZinH[0] + 1;
+
+}
+}
+if (A[7] >= 1000 && backN !== A[10]) {
+let hou=[backN];
+for (let u = 0; u < hou.length; u++) {
+
+for (let w = 0; w < bo4xy.length; w++) {
+let Pr = backN;
+if(bo4xy[w][3] === hou[u]){
+hou[w] = bo4xy[w][6];
+
+document.getElementById("btext").innerText = hou;
+
+if( A[10]===bo4xy[w][6]){
+ A[10] = bo4xy[w][3];
+if(bo4xy[w][5] !== null) A[11] = bo4xy[w][5];
+A[7] -= bo4xy[w][4];
+break;
+}
+}
+
+}
+}
+}
+
+} 
+}
+}
+}
+
+let intervalI2 = setInterval(vi2B, 50);
+
+function catch3(){
+if (event.keyCode === 90){
+intervalI3 = setInterval(catch2, 50);
+}
+if (event.keyCode === 88){
+
+}
+}
+
+document.addEventListener("keydown", catch3);
+
+var EleconS = [
+["creEle","img",["17.png","name1"]],["remove","nameH",["name1"]]
+];
+
+let sltId = [];
+
+function seMf() {
+let uE = null;
+for (let u = 0; u < selectS.length; u++) {
+uE = selectS[u];
+if(uE[4] === serifNS&& uE[5] === serifN&& uE[6] === serifNN){
+moad = "sChoice";
+if(moad === "sChoice"){
+selectN = u;
+const newe1 = document.createElement('div');
+newe1.id = "Nselect1";
+newe1.style.position = 'absolute';
+for (let i = 0; i < uE[3].length; i++) {
+const newe2 = document.createElement('p');
+newe2.id = "NAsl" + i;
+uE[7][uE[7].length] = "NAsl" + i;
+newe2.classList.add('text2');
+newe2.innerText = uE[3][i];
+newe1.style.width = 200 + "%";
+newe2.style.top += i*50;
+newe1.style.top = "50%";
+newe1.style.left = "50%";
+newe1.appendChild(newe2);
+}
+vi4.appendChild(newe1);
+}else{
+serifN = talkingE;
+}
+
+}
+}
+
+}
+
+vi4.addEventListener("click", () => {
+let ot = event.target.id;
+TMAren();
+decide = selectS[selectN][7].indexOf(ot);
+let a = selectS[selectN];
+if(a[7].includes(ot)){
+
+
+if(a[8][decide]!==null)serifN = a[8][decide];
+}
+
+serifNN = 0;
+document.getElementById("area").innerText = serifNS[serifN][serifNN];
+a[7].length = 0;
+document.getElementById("Nselect1").remove();
+moad = "talk";
+})
+
+var iNeT = null;
+
+
+
+let id = window.setInterval(function(){
+
+});
+
+let idA;
+
+function TMAren(){
+for (let u = 0; u < tMa.length; u++) {
+idA = tMa[u];
+if(idA[0] === "serifNandNN"){
+
+if(moad==="talk"&&idA[2] === serifN&&idA[3]=== serifNN){
+eveTu();
+
+}
+}
+
+}
+}
+
+
+
+for (let u = 0; u < tMa.length; u++) {
+idA = tMa[u];
+if(idA[0] === "onload"){
+eveTu();
+}
+
+}
+
+
+
+function eveTu(){
+let idB;
+const winW = window.innerWidth;
+const winH = window.innerHeight;
+idB = eventTag[idA[1]];
+
+if(idB[0] === "creEle"){
+const newe4 = document.createElement(idB[1]);
+newe4.id = idB[2][1];
+newe4.style.position = 'absolute';
+newe4.style.width = idB[2][2]*winW/100 + "px";
+newe4.style.left = idB[2][3]*winW/100 + "px";
+newe4.style.top = idB[2][4]*winW/100 + "px";
+if(idB[1] === "img"||idB[1] === "audio"){
+newe4.src = idB[2][0];
+}
+document.getElementById("vi5").appendChild(newe4);
+if(idB[1]==="audio"){
+newe4.play();
+newe4.addEventListener('loadedmetadata',function(e) {
+setTimeout(() => {
+  newe4.remove();
+}, newe4.duration*1000);
+});
+
+}
+}
+
+if(idB[0] === "removeEle"){
+if(idB[1] === "nameH"){
+document.getElementById(idB[2][0]).remove();
+}
+}
+if(idB[0] === "CspF"){
+spF2[idB[2][0]][idB[2][1]] = idB[2][2];
+}
+vi2B();
+
+}
+
+document.addEventListener("click", TMAren);
+
+document.body.ondragstart = function(e) {
+return false;
+};
