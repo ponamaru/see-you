@@ -1,4 +1,7 @@
 <html>
+<head>
+<meta charset="UTF-8">
+</head>
 <style>
 html, body {
   background-color: gray;
@@ -129,6 +132,7 @@ pointer-events: none;
 <div id="btext"></div>
 <img id="vi" src="14.png"></div>
 <div id="vi2">
+
 <img src="60left.png" id="bo1" width="7%">
 <img src="60left.png" id="bo3" width="7%">
 </div>
@@ -136,7 +140,9 @@ pointer-events: none;
 <div id="vi4"></div>
 <div id="vi5"></div>
 <div id="blackBlock"></div>
+<div id="scriptS"></div>
 <script>
+const scriptS = document.getElementById("scriptS");
 var fun = "funLoad2.js";
 
 window.parent.postMessage("funC", '*');
@@ -150,16 +156,15 @@ fun = event.data2;
 });
 function Loaded(){
 const NewES = document.createElement('script');
-NewES.text = "newE.js";
+NewES.src = "newE.js";
 const LoadedJs = document.createElement('script');
-LoadedJs.text = fun;
-document.html.appendChild(LoadedJs);
-document.html.appendChild(NewES);
+LoadedJs.src = fun;
+scriptS.appendChild(LoadedJs);
+scriptS.appendChild(NewES);
 }
 Loaded();
 </script>
 
 </html>
-
 
 
