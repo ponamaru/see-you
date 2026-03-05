@@ -136,7 +136,7 @@ position: absolute;
 <div id="btext"></div>
 <img id="vi" src="14.png"></div>
 <div id="vi2">
-<img id="imgload" src="3.png">
+<img id="imgload" src="1.png">
 <img src="60left.png" id="bo1" width="7%">
 <img src="60left.png" id="bo3" width="7%">
 </div>
@@ -149,13 +149,13 @@ position: absolute;
 const scriptS = document.getElementById("scriptS");
 var fun = "funLoad2.js";
 
-window.parent.postMessage("funC", '*');
+//window.parent.postMessage("funC", '*');
 
 //fun = window.parent.Pvar;
 var funSS = ["funLoad2.js"];
 window.addEventListener('message',(event) => {
-  if (funSS.includes(event.data2)) {
-fun = event.data2;
+  if (funSS.includes(event.data)) {
+fun = event.data;
   }
 });
 function Loaded(){
@@ -170,7 +170,5 @@ Loaded();
 </script>
 
 </html>
-
-
 
 

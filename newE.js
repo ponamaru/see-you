@@ -523,7 +523,7 @@ eveTu();
 
 for (let u = 0; u < tMa.length; u++) {
 idA = tMa[u];
-if(idA[0] === "onload"){
+if(idA[0] === "atStart"){
 eveTu();
 }
 
@@ -568,6 +568,11 @@ if(idB[0] === "CspF"){
 spF2[idB[2][0]][idB[2][1]] = idB[2][2];
 }
 vi2B();
+if(idB[0] === "BGM"){
+let data = [idB[2][0],"BGM"];
+window.parent.postMessage(data, '*');
+}
+
 
 }
 
@@ -576,7 +581,6 @@ document.addEventListener("click", TMAren);
 document.body.ondragstart = function(e) {
 return false;
 };
-
 
 function LoadingStyle(){
 for (let i = 0; i < backSS.length; i++) {

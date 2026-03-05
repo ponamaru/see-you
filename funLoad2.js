@@ -3,7 +3,7 @@ var backNN = 0;
 //["width","top","left","image.src","none","display","scene","serif","z","event","speed","backN","backNN"]
 
 var arrow = ["60left.png","60pushed.png"];
-var backSS = [["8.png","5.png"],["15.png","18.png"]];
+var backSS = [["8.png","5.png"],["13.png","18.png"]];
 
 var spF2 = [["10%","32%","64%","12.png","none",null,0,30,"no",20,0,0,1],["40%","34%","30%","11.png","block",null,3,30,"talk",20,0,1,2],["30%","30%","30%","Toumi.png","block",null,2,30,"talk",20,1,0,3]];
 
@@ -36,7 +36,8 @@ var tMa = [
 ["serifNandNN",6,3,0],
 ["serifNandNN",7,3,0],
 ["serifNandNN",8,3,0],
-["serifNandNN",9,3,0]
+["serifNandNN",9,3,0],
+["atStart",10,3,0]
 ];
 
 
@@ -51,7 +52,8 @@ var eventTag = [
 ["CspF",null,[0,4,"block"],null,3,0],
 ["CspF",null,[1,8,"no"],null,3,0],
 ["CspF",null,[2,6,5],null,3,0],
-["creEle","audio",["鍵を落とす.mp3","name1",50,50,10],serifNN,0,0]
+["creEle","audio",["鍵を落とす.mp3","name1",50,50,10],serifNN,0,0],
+["BGM","audio",["Null 37b.m4a","name1",50,50,10],serifNN,0,0]
 ];
 
 var tMaAdd = [["serifNandNN",3,tMa[0][2],tMa[0][3]+1]];

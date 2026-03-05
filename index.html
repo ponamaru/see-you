@@ -13,33 +13,22 @@ top: 0%;
 }
 </style>
 <body>
+<audio id="bgm1"></audio>
 <iframe src='new EventTag2.html' id="tu1"></iframe>
 <script>
 var Pvar = "funLoad2.js"; 
 let iframe = document.getElementById("tu1");
+let bgm1 = document.getElementById("bgm1");
 
 window.addEventListener('message', (event) => {
-
-if(event.data === 'funC'){
-iframe.contentWindow.fun = Pvar;
+if(event.data[1] === "BGM"){
+bgm1.src = event.data[0];
 }
 
 });
 
-iframe.onload = function() {
-const data = { action: 'changeFun', funS: Pvar };
-iframe.contentWindow.postMessage(data,'*');
-};
-
-function Load(){
-const data2 = 'funLoad2.js';
-iframe.contentWindow.postMessage(data2,'*');
-}
-
-Load();
+//iframe.contentWindow.fun = Pvar;
 
 </script>
 </body>
-
 </html>
-
