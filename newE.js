@@ -576,3 +576,16 @@ document.addEventListener("click", TMAren);
 document.body.ondragstart = function(e) {
 return false;
 };
+
+
+function LoadingStyle(){
+for (let i = 0; i < backSS.length; i++) {
+for (let u = 0; u < backSS[i].length; u++) {
+document.getElementById("imgload").src= backSS[i][u];
+}
+}
+for (let u = 0; u < spF2.length; u++) {
+document.getElementById("imgload").src= spF2[u][3];
+}
+}
+LoadingStyle();
