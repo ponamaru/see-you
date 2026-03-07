@@ -5,7 +5,7 @@ var backNN = 0;
 var arrow = ["60left.png","60pushed.png"];
 var backSS = [["8.png","5.png"],["13.png","18.png"]];
 
-var spF2 = [["10%","32%","64%","12.png","none",null,0,30,"no",20,0,0,1],["40%","34%","30%","11.png","block",null,3,30,"talk",20,0,1,2],["30%","30%","30%","Toumi.png","block",null,2,30,"talk",20,1,0,3]];
+var spF2 = [["10%","32%","64%","12.png","none",null,1,30,"talk",20,0,0,1],["40%","34%","30%","11.png","block",null,3,30,"talk",20,0,1,2],["30%","30%","30%","Toumi.png","block",null,2,30,"talk",20,1,0,3]];
 
 var EwhChi = "100%";
 
@@ -37,7 +37,8 @@ var tMa = [
 ["serifNandNN",7,3,0],
 ["serifNandNN",8,3,0],
 ["serifNandNN",9,3,0],
-["serifNandNN",10,3,0]
+["serifNandNN",10,3,0],
+["serifNandNN",11,1,1]
 ];
 
 
@@ -52,8 +53,9 @@ var eventTag = [
 ["CspF",null,[0,4,"block"],null,3,0],
 ["CspF",null,[1,8,"no"],null,3,0],
 ["CspF",null,[2,6,5],null,3,0],
-["creEle","audio",["drop down key.mp3","name1",50,50,10],serifNN,0,0],
-["BGM","audio",["Null 37b.m4a","name1",50,50,10],serifNN,0,0]
+["creEle","audio",["鍵を落とす.mp3","name1",50,50,10],serifNN,0,0],
+["BGM","audio",["Null 37b.m4a","name1",50,50,10],serifNN,0,0],
+["funC","a",["funLoad.js","name1",50,50,10],serifNN,0,0]
 ];
 
 var tMaAdd = [["serifNandNN",3,tMa[0][2],tMa[0][3]+1]];
@@ -61,5 +63,4 @@ var tMaAdd = [["serifNandNN",3,tMa[0][2],tMa[0][3]+1]];
 for (let i = 0; i < tMaAdd.length; i++) {
 tMa.push(tMaAdd[i]);
 }
-
 

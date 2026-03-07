@@ -24,6 +24,10 @@ window.addEventListener('message', (event) => {
 if(event.data[1] === "BGM"){
 bgm1.src = event.data[0];
 }
+if(event.data[1] === "funC"){
+Pvar = event.data[0];
+iframe.contentWindow.fun = Pvar;
+}
 
 });
 

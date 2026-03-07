@@ -573,7 +573,11 @@ if(idB[0] === "BGM"){
 let data = [idB[2][0],"BGM"];
 window.parent.postMessage(data, '*');
 }
-
+if(idB[0] === "funC"){
+let data = [idB[2][0],"funC"];
+window.parent.postMessage(data, '*');
+window.location.reload();
+}
 
 }
 
