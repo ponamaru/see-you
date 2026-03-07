@@ -151,7 +151,7 @@ var fun = "funLoad2.js";
 
 //window.parent.postMessage("funC", '*');
 
-//fun = window.parent.Pvar;
+fun = window.parent.Pvar;
 var funSS = ["funLoad2.js"];
 window.addEventListener('message',(event) => {
   if (funSS.includes(event.data)) {
@@ -170,5 +170,6 @@ Loaded();
 </script>
 
 </html>
+
 
 
