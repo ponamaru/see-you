@@ -97,10 +97,9 @@ window.clearInterval(id2);
 }
 
 let at1;
-
+eventB = "bo1";
 document.getElementById("vi2").addEventListener("click", () => {
 if(con === true) {
-con = false;
 if(event.target === document.getElementById("bo1")){
 eventB = "bo1";
 right();
@@ -113,7 +112,8 @@ left();
 at1 = -1;
 LRc3();
 }
-
+if(event.target === document.getElementById("bo3")||event.target === document.getElementById("bo1")){
+con = false;
 setTimeout(() => {
 vi.src = backSS[backN][backNN];
 newSPF();
@@ -125,6 +125,7 @@ setTimeout(() => {
 con = true;
 }, "500");
   red();
+}
 }
 });
 var talkingE = null;

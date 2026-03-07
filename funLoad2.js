@@ -37,7 +37,7 @@ var tMa = [
 ["serifNandNN",7,3,0],
 ["serifNandNN",8,3,0],
 ["serifNandNN",9,3,0],
-["atStart",10,3,0]
+["serifNandNN",10,3,0]
 ];
 
 
