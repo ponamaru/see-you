@@ -165,7 +165,10 @@ const LoadedJs = document.createElement('script');
 LoadedJs.src = fun;
 scriptS.appendChild(LoadedJs);
 .then(result => {
-scriptS.appendChild(NewES);  
+scriptS.appendChild(NewES); 
+})
+.catch(error => {
+
 });
 setTimeout(() => {
 
@@ -175,6 +178,7 @@ Loaded();
 </script>
 
 </html>
+
 
 
 
