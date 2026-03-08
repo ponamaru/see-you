@@ -53,7 +53,7 @@ var eventTag = [
 ["CspF",null,[0,4,"block"],null,3,0],
 ["CspF",null,[1,8,"no"],null,3,0],
 ["CspF",null,[2,6,5],null,3,0],
-["creEle","audio",["鍵を落とす.mp3","name1",50,50,10],serifNN,0,0],
+["creEle","audio",["drop down key.mp3","name1",50,50,10],serifNN,0,0],
 ["BGM","audio",["Null 37b.m4a","name1",50,50,10],serifNN,0,0],
 ["funC","a",["funLoad.js","name1",50,50,10],serifNN,0,0]
 ];
@@ -63,4 +63,5 @@ var tMaAdd = [["serifNandNN",3,tMa[0][2],tMa[0][3]+1]];
 for (let i = 0; i < tMaAdd.length; i++) {
 tMa.push(tMaAdd[i]);
 }
+
 
