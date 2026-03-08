@@ -164,12 +164,17 @@ NewES.src = "newE.js";
 const LoadedJs = document.createElement('script');
 LoadedJs.src = fun;
 scriptS.appendChild(LoadedJs);
+setTimeout(() => {
 scriptS.appendChild(NewES);
+}, 2);
+});
+
 }
 Loaded();
 </script>
 
 </html>
+
 
 
 
