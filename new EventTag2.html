@@ -159,19 +159,25 @@ fun = event.data;
   }
 });
 function Loaded(){
-const NewES = document.createElement('script');
-NewES.src = "newE.js";
 const LoadedJs = document.createElement('script');
 LoadedJs.src = fun;
 scriptS.appendChild(LoadedJs);
-setTimeout(() => {
-scriptS.appendChild(NewES); 
-}, 10);  
 }
-Loaded();
+
+async function Loaded2() {
+const x = await Loaded(0);
+const NewES = document.createElement('script');
+NewES.src = "newE.js";
+scriptS.appendChild(NewES);
+}
+setTimeout(() => {
+ 
+}, 10);  
+Loaded2();
 </script>
 
 </html>
+
 
 
 
